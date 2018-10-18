@@ -1,19 +1,90 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="description" content="HW 2 - Making Visual Better">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>FIFA World Cups | Visualization of Goals Made</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script>
+    <meta name="description" content="HW 2 - Making Visual Better">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FIFA World Cups | Visualization of Goals Made</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="plot.js"></script>
 </head>
+
 <body>
-<div id="chart">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/2.0.8/es5-shim.min.js"></script>
-  <svg width="700" height="500">
-  </svg>
-</div>
+
+    <section class="section" id="main">
+        <div class="container has-text-centered" id="part1">
+            <h1 class="title">Improving Visual Based on Plotting Principles</h1>
+        </div>
+
+        <div class="container" id="part2">
+            <h2 class="subtitle">Choosing a Visual that Needs Improvement</h2>
+            <p>When exploring Kaggle, I found a visualization that utilized statistics from FIFA World Cup matches from 1930 to 2014. The data used was scraped from the official FIFA World Cup Archive website and uploaded onto Kaggle for users to play around with.
+                This particular user who made the visualization shown in Figure 1 also made other plots to explore the datasets that are available on Kaggle. The user's main purpose of making the plots was to explore the history of games since 1930 and to see
+                if there is anything interesting to note in the data. In the line plot I chose to recreate, the purpose was to visualize the trend in the number of goals made during the World Cup each year. I noticed that there were some issues with it that make
+                the plot difficult to comprehend at first glance.</p>
+            <br>
+
+            <p>According to <strong>Principles 1 and 3 of improving the vision</strong> of a plot, there should be an appropriate number of tick marks and labels for each axis and the scale lines should never interfere with the data. In Figure 1, we can argue that there is an excessive
+                number of ticks on the x-axis. Furthermore, the ticks on the y-axis are so close together that the labels interfere with each other. This is because the user did not use a uniform scale. Instead, the ticks are made where each data point is located.
+                Although it makes it possible to view the specific numbers at each point in the line plot, it makes it difficult to read the numbers where the tick labels overlap.</p>
+            <br>
+
+            <p>Another issue with the visualization is the lack of explanation for why the user made the plot (<strong>Principle 1 of improving the understanding</strong> of a plot). I can only assume that the user graphed the goals made throughout the history of FIFA World Cups
+                simply to explore the data and to visualize the rising trend over the years. However, this doesn't tell the readers the entire story. It would also be helpful to know how many matches were played during each World Cup since more matches would
+                imply that more goals were made.
+            </p>
+            <br>
+
+            <div class="container has-text-centered">
+                <img src="https://www.kaggleusercontent.com/kf/4621148/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..R3vSigq3aYYjbK1_LHmjAw.WwQX29mb9q41nDitcYOmlrzSyeCYdvnx_MWti0x1wnWlC8c9DAt_UpF9EuxWvDVE2Z-0zxWFSYMXUA-XM8-xMruzU29UPFNk1rXKV_bRHTwxxaSHXy3vBW4NCp2KLVP9OqI8ohnLOrC-S2_z5x8EjV9ShOzRh1vkOwkEWtMWJDs.w7a_QWmq6wAt3ioCh8r6JA/__results___files/__results___12_0.png"
+            alt="line plot that does not follow plotting principles">
+                <p><strong><em>Figure 1. Line graph of total number of goals made in FIFA World Cups from 1930 to 2014.
+</em></strong></p>
+            </div>
+        </div>
+        <br>
+
+        <div class="container" id="part3">
+            <h2 class="subtitle">Improving the Visual Using d3.js</h2>
+
+            <p>In order to improve on this visualization, I decided to use a uniform scale for both the x-axis and y-axis. This prevented the ticks from overlapping each other. I also decided to decrease the number of ticks so the tick labels do not appear to be
+                overly cluttered. This would solve <strong>Principles 1 and 3 of improving the vision</strong> of a plot. In order to keep the information that displays the number of goals and the year for each vertex of the line plot, I decided to add circles/dots to the graph
+                and tooltips that display extra information when a mouse hovers over the circles.
+            </p>
+
+            <p>To solve <strong>Principle 1 of improving the understanding</strong> of the plot, I decided to add a more detailed title for the line plot to clarify what the graph is showing. My graph still does not take into account the number of matches played at each World Cup,
+                but it still retains the original purpose of visualizing the rising trend of goals made.
+            </p>
+
+            <div class="container has-text-centered" id="chart">
+                <svg width="700" height="450">
+                </svg>
+                <p><strong><em>Figure 2. Revised line graph of total number of goals made in FIFA World Cups from 1930 to 2014.
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="content">
+            <h2 class="subtitle">Resources</h2>
+            <ul>
+                <li>
+                    <a href="https://www.fifa.com/fifa-tournaments/statistics-and-records/worldcup/index.html">Original source of the data</a>
+                </li>
+                <li>
+                    <a href="https://www.kaggle.com/dicoderdisha/fifa-worldcup-data-visualization/notebook">Kaggle Kernel where visualization in Figure 1 was taken from</a>
+                </li>
+                <li>
+                    <a href="https://jsbin.com/lomeguc/10/edit?html,css,js,output">JSBin with My Code</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
 </body>
+
 </html>

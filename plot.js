@@ -55,7 +55,7 @@ function insertLine(svg, g, xScale, yScale, data) {
 };
 
 function createPlot(data) {
-  var canvasSize = [700, 500];
+  var canvasSize = [700, 450];
   var tickSize = 5;
   var pArea = [75, 75, 650, 400];
 
