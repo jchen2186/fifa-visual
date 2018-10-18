@@ -1,4 +1,4 @@
-d3.csv("https://raw.githubusercontent.com/jchen2186/fifa-visuals/master/WorldCups.csv",
+d3.csv("https://raw.githubusercontent.com/jchen2186/fifa-visual/master/data/WorldCups.csv",
        function(matches) {
 //   console.log(matches[0]);
   var data = matches.map(obj => [
