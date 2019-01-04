@@ -17,14 +17,12 @@
   stroke: #367aab;
   stroke-width: 2px;
   position: absolute;
-  z-index: 0;
 }
 
 .dot {
   stroke: none;
   fill: black;
   position: absolute;
-  z-index: 5;
 }
 
 .tooltip {
